@@ -1,0 +1,192 @@
+%% Activity 1: Workspace estimation
+clear all
+[comPort,robot,id,info,modelNumber,hardwareVersion,firmwareVersion] = controllerSetup
+robot.DeviceWakeup();
+request = zeros(3,1);
+totalTimeElapsed = 0;
+tic;
+timediffs = zeros(1,1000);
+count = 0;
+while true
+    [pos, vel] = robot.EndEffectorForce(request);
+    % define x, y, and z in terms of the haptic device's position commands
+    plot3(x,y,z,'k.');
+    drawnow;
+    hold on;
+    while toc < 0.005 
+        % we wait
+    end
+    totalTimeElapsed = totalTimeElapsed + toc;
+
+    % timediffs(cc) = toc;
+
+    tic;
+
+    if (totalTimeElapsed > 15.0)
+        break
+    end
+end
+%% Activity 2: Spring system
+clear all
+[comPort,robot,id,info,modelNumber,hardwareVersion,firmwareVersion] = controllerSetup
+robot.DeviceWakeup();
+request = zeros(3,1);
+totalTimeElapsed = 0;
+tic;
+timediffs = zeros(1,1000);
+count = 0;
+while true
+    [pos, vel] = robot.EndEffectorForce(request);
+    % define the limit along y (ylim)
+    % define y force request as a function of end-effector displacement
+    % relative to ylim with some scalar
+    while toc < 0.005  
+        % we wait. 
+    end
+    totalTimeElapsed = totalTimeElapsed + toc;
+
+    % timediffs(cc) = toc;
+
+    tic;
+
+    if (totalTimeElapsed > 15.0)
+        break
+    end
+end
+%% Activity 3: Haptic sphere
+clear all
+[comPort,robot,id,info,modelNumber,hardwareVersion,firmwareVersion] = controllerSetup
+request = zeros(3,1);
+totalTimeElapsed = 0;
+tic;
+timediffs = zeros(1,1000);
+count = 0;
+while true
+    [pos, vel] = robot.EndEffectorForce(request);
+    X = [pos(1),pos(2),pos(3);0.03147,-0.1677,0.11646];
+    if pdist(X,'euclidean')<0.09 %some error threshold
+        % sphere geometry interaction logic
+    else
+        % no contact with sphere geometry
+    end
+    while toc < 0.005 
+        % we wait
+    end
+    totalTimeElapsed = totalTimeElapsed + toc;
+
+    % timediffs(cc) = toc;
+
+    tic;
+
+    if (totalTimeElapsed > 15.0)
+        break
+    end
+end
+%% Activity 4: Viscous friction
+clear all
+[comPort,robot,id,info,modelNumber,hardwareVersion,firmwareVersion] = controllerSetup
+request = zeros(3,1);
+totalTimeElapsed = 0;
+tic;
+timediffs = zeros(1,1000);
+count = 0;
+while true
+    [pos, vel] = robot.EndEffectorForce(request);
+    
+    % define damping coefficient
+    % define all forces
+
+    while toc < 0.005  
+        % we wait
+    end
+    totalTimeElapsed = totalTimeElapsed + toc;
+
+    % timediffs(cc) = toc;
+
+    tic;
+
+    if (totalTimeElapsed > 15.0)
+        break
+        clear all
+        clc
+    end
+end
+%% Activity 5: Virtual Wall
+clear all
+[comPort,robot,id,info,modelNumber,hardwareVersion,firmwareVersion] = controllerSetup
+request = zeros(3,1);
+totalTimeElapsed = 0;
+tic;
+timediffs = zeros(1,1000);
+count = 0;
+while true
+    [pos, vel] = robot.EndEffectorForce(request);
+    % code here
+    if pos(1)<0
+        % wall interaction logic
+    else
+        % no wall contact logic
+    end
+    while toc < 0.005  
+        % we wait
+    end
+    totalTimeElapsed = totalTimeElapsed + toc;
+
+    % timediffs(cc) = toc;
+
+    tic;
+
+    if (totalTimeElapsed > 15.0)
+        break
+    end
+end
+%% Activity 6: Spring-damper system
+clear all
+[comPort,robot,id,info,modelNumber,hardwareVersion,firmwareVersion] = controllerSetup
+request = zeros(3,1);
+totalTimeElapsed = 0;
+tic;
+timediffs = zeros(1,1000);
+count = 0;
+i = 0;
+while true
+    [pos, vel] = robot.EndEffectorForce(request);
+    x = pos(1);
+    y = pos(2);
+    z = pos(3);
+    actual = norm([pos(1),pos(2),pos(3)]);
+    desired = norm([0.03147,-0.1677,0.11646]);
+    plot(i,actual,'b.');
+    hold on;
+    plot(i,desired,'k.')
+    
+    % define constants
+    % define forces
+
+    while toc < 0.005  
+        % we wait
+    end
+    totalTimeElapsed = totalTimeElapsed + toc;
+
+    % timediffs(cc) = toc;
+
+    tic;
+    
+    if (totalTimeElapsed > 15.0)
+        break 
+    end
+    i = i+1;
+end
+%% Controller Setup Block
+function [comPort,robot,id,info,modelNumber,hardwareVersion,firmwareVersion] = controllerSetup
+    clear all ;
+    clc;
+    addpath('C:\Users\alecc\Desktop\SYSC 4206 Lab 6 Folder\dependencies'); %add path for dependencies
+    comPort = 'COM10';
+    robot = HardwareAPI(comPort, true, true);
+    id = robot.deviceId
+    info = robot.packageInfo();
+    modelNumber = robot.deviceModelNumber
+    hardwareVersion = robot.deviceHardwareVersion
+    firmwareVersion = robot.deviceFirmwareVersion
+end
