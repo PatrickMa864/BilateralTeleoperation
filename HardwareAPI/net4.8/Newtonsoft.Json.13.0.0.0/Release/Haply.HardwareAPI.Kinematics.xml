@@ -1,0 +1,423 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Haply.HardwareAPI.Kinematics</name>
+    </assembly>
+    <members>
+        <member name="T:Haply.HardwareAPI.Kinematics.FrameOffsets">
+            <summary>
+            Linear and angular displacements between two frames, according to the true Denavit–Hartenberg parameter formulation.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.FrameOffsets.d">
+            <summary>
+            Linear displacement along previous Z axis, from the previous X axis to the new X axis, in meters.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.FrameOffsets.a">
+            <summary>
+            Linear displacement along the new X axis, from the previous Z axis to the new Z axis, in meters.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.FrameOffsets.theta">
+            <summary>
+            Angular displacement about previous Z axis, from the previous X axis to the new X axis, in radians.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.FrameOffsets.alpha">
+            <summary>
+            Angular displacement about the new X axis, from the previous Z axis to the new Z axis, in radians.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Kinematics.I3DOFKinematics">
+            <summary>
+            Calculates forward/inverse kinematics.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.I3DOFKinematics.ForwardKinematics(System.Single[]@)">
+            <summary>
+            Convert joint angles to a linear position in 3-dimensional
+            space according to the following axis convention:
+            <br></br> Positive X: Right,
+            <br></br> Positive Y: Forward,
+            <br></br> Positive Z: Up
+            </summary>
+            <param name="angles">Joint angles, in degrees.</param>
+            <returns>End-effector position, in meters.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.I3DOFKinematics.InverseKinematics(System.ValueTuple{System.Single,System.Single,System.Single}@,System.Single[]@)">
+            <summary>
+            Convert a linear position in 3-dimensional space
+            to joint angles, according to the following axis convention:
+            <br></br> Positive X: Right,
+            <br></br> Positive Y: Forward,
+            <br></br> Positive Z: Up
+            </summary>
+            <param name="vector">Position, in meters.</param>
+            <param name="angles">Joint angles, in degrees.</param>
+            <returns>True, if the calculation succeeds. </returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.I3DOFKinematics.JacobianCalculation(System.Single[]@)">
+            <summary>
+            Calculate a Jacobian matrix based on a set of joint angles.
+            </summary>
+            <param name="angles">Joint angle values, in degrees.</param>
+            <returns>A Jacobian matrix.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.I3DOFKinematics.VelocityCalculation(Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@,System.Single[]@)">
+            <summary>
+            Use a Jacobian matrix to calculate the linear velocity corresponding to a set of angular velocities.
+            </summary>
+            <param name="jacobian">The Jacobian matrix.</param>
+            <param name="angularVelocities">Angular velocity values, in degrees per second.</param>
+            <returns>A linear velocity, in meters per second.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.I3DOFKinematics.TorqueCalculation(Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@,System.ValueTuple{System.Single,System.Single,System.Single}@,System.Single[]@)">
+            <summary>
+            Use a Jacobian matrix to calculate the set motor torques corresponding to a linear force.
+            </summary>
+            <param name="jacobian">The Jacobian matrix.</param>
+            <param name="force">The input force.</param>
+            <param name="torques">The output torques.</param>
+            <returns>True, if the calculation was successful.</returns>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.MathUtility.DEGREES_TO_RADIANS">
+            <summary>
+            Coefficient to multiply with a rotation in degrees to obtain the same rotation in radians.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.MathUtility.RADIANS_TO_DEGREES">
+            <summary>
+            Coefficient to multiply with a rotation in radians to obtain the same rotation in degrees.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.PopulateIdentityMatrix">
+            <summary>
+            Generate an identity matrix.
+            </summary>
+            <returns>The identity matrix.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.PopulateRotationMatrix(System.Double@,System.Double@)">
+            <summary>
+            Generate a rotation matrix corresponding to the angular displacements <paramref name="theta"/> and <paramref name="alpha"/>.
+            </summary>
+            <param name="theta">Angular displacement about the Z axis.</param>
+            <param name="alpha">Angular displacement about the X axis.</param>
+            <returns>A rotation matrix.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.AddVectors(System.ValueTuple{System.Double,System.Double,System.Double}@,System.ValueTuple{System.Double,System.Double,System.Double}@)">
+            <summary>
+            Add a vector to another vector.
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns>The sum of vectors <paramref name="a"/> and <paramref name="b"/>, as a vector..</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.SubtractVectors(System.ValueTuple{System.Double,System.Double,System.Double}@,System.ValueTuple{System.Double,System.Double,System.Double}@)">
+            <summary>
+            Subtract a vector from another vector.
+            </summary>
+            <param name="a">Lefthand-side operand.</param>
+            <param name="b">Righthand-side operand.</param>
+            <returns>The difference of vectors <paramref name="a"/> and <paramref name="b"/>, as a vector.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.MultiplyVector(Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@,System.ValueTuple{System.Double,System.Double,System.Double}@)">
+            <summary>
+            Multiply a vector by a matrix.
+            </summary>
+            <param name="T">Lefthand-side operand.</param>
+            <param name="vector">Righthand-side operand.</param>
+            <returns>The product of <paramref name="T"/> and <paramref name="vector"/>, as a new vector.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Transpose``1(Haply.HardwareAPI.Kinematics.Matrix3x3{``0}@)">
+            <summary>
+            Transpose a matrix.
+            </summary>
+            <typeparam name="T">The data type of the matrix <paramref name="A"/>.</typeparam>
+            <param name="A">The matrix to transpose.</param>
+            <returns>The transpose of the matrix <paramref name="A"/>.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.MultiplyMatrices(Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@,Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@)">
+            <summary>
+            Multiply two matrices together.
+            </summary>
+            <param name="A">Lefthand side operand.</param>
+            <param name="B">Righthand side operand.</param>
+            <returns>A matrix representing the product of <paramref name="A"/> and <paramref name="B"/>.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.InvertMatrix(Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@)">
+            <summary>
+            Compute the inverse of a matrix. Implementation generated by MATLAB.
+            </summary>
+            <param name="A">Matrix to invert.</param>
+            <returns>Inverse of the matrix <paramref name="A"/>.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.AccumulateFrameOffset(Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@,System.ValueTuple{System.Double,System.Double,System.Double}@,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Accumulate the angular and linear displacement introduced by a set of DH parameters.
+            </summary>
+            <param name="R">Accumulated rotation matrix.</param>
+            <param name="p">Accumulated displacement vector, in meters.</param>
+            <param name="d">Linear displacement along previous Z axis, from the previous X axis to the new X axis, in meters.</param>
+            <param name="theta">Angular displacement about previous Z axis, from the previous X axis to the new X axis, in radians.</param>
+            <param name="a">Linear displacement along the new X axis, from the previous Z axis to the new Z axis, in meters.</param>
+            <param name="alpha">Angular displacement about the new X axis, from the previous Z axis to the new Z axis, in radians.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.AccumulateFrameOffset(Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@,System.ValueTuple{System.Double,System.Double,System.Double}@,Haply.HardwareAPI.Kinematics.FrameOffsets@)">
+            <summary>
+            Accumulate the angular and linear displacement introduced by a set of DH parameters.
+            </summary>
+            <param name="R">Accumulated rotation matrix.</param>
+            <param name="p">Accumulated displacement vector, in meters.</param>
+            <param name="f">DH parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Solve(Haply.HardwareAPI.Kinematics.PantographOffsets,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Computes the position of the end-effector in the pantograph frame (2 dimensions).
+            </summary>
+            <param name="p">Pantograph hardware parameters.</param>
+            <param name="theta1">Joint angle 1, in radians.</param>
+            <param name="theta2">Joint angle 2, in radians.</param>
+            <param name="c1">Cos of <paramref name="theta1"/> (pre-calculated).</param>
+            <param name="s1">Sin of <paramref name="theta1"/> (pre-calculated).</param>
+            <param name="c2">Cos of <paramref name="theta2"/> (pre-calculated).</param>
+            <param name="s2">Sin of <paramref name="theta2"/> (pre-calculated).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Solve(Haply.HardwareAPI.Kinematics.PantographOffsets,System.Double,System.Double)">
+            <summary>
+            Computes the position of the end-effector in the pantograph frame (2 dimensions). Cos and Sin of <paramref name="theta1"/> and <paramref name="theta2"/> will be calculated before being passed to <see cref="M:Haply.HardwareAPI.Kinematics.MathUtility.Solve(Haply.HardwareAPI.Kinematics.PantographOffsets,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)"/>.
+            </summary>
+            <param name="p">Pantograph hardware parameters.</param>
+            <param name="theta1">Joint angle 1, in radians.</param>
+            <param name="theta2">Joint angle 2, in radians.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Debug.Format(System.Double,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="n"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Debug.Format(System.Single,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="n"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Debug.Format(System.String,System.Double,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="label"></param>
+            <param name="n"></param>
+            <param name="precision"></param>
+            <param name="labelWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Debug.Format(System.String,System.Single,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="label"></param>
+            <param name="n"></param>
+            <param name="precision"></param>
+            <param name="labelWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Debug.Format(System.String,System.ValueTuple{System.Double,System.Double,System.Double},System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="label"></param>
+            <param name="v"></param>
+            <param name="precision"></param>
+            <param name="labelWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Debug.Format(System.String,System.ValueTuple{System.Single,System.Single,System.Single},System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="label"></param>
+            <param name="v"></param>
+            <param name="precision"></param>
+            <param name="labelWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Debug.Format(System.String,System.Double[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="label"></param>
+            <param name="a"></param>
+            <param name="precision"></param>
+            <param name="labelWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Debug.Format(System.String,System.Single[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="label"></param>
+            <param name="a"></param>
+            <param name="precision"></param>
+            <param name="labelWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Debug.Format(System.String,Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="label"></param>
+            <param name="M"></param>
+            <param name="precision"></param>
+            <param name="labelWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Kinematics.MathUtility.Debug.Format(System.String,Haply.HardwareAPI.Kinematics.Matrix3x3{System.Single}@,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="label"></param>
+            <param name="M"></param>
+            <param name="precision"></param>
+            <param name="labelWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Kinematics.Matrix3x3`1">
+            <summary>
+            Holds 9 row-major fields of type <typeparamref name="T"/>. Provides row/column indexing for convenience and intelligibility.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.Matrix3x3`1.m00">
+            <summary>
+            Row 0, column 0.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.Matrix3x3`1.m01">
+            <summary>
+            Row 0, column 1.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.Matrix3x3`1.m02">
+            <summary>
+            Row 0, column 2.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.Matrix3x3`1.m10">
+            <summary>
+            Row 1, column 0.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.Matrix3x3`1.m11">
+            <summary>
+            Row 1, column 1.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.Matrix3x3`1.m12">
+            <summary>
+            Row 1, column 2.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.Matrix3x3`1.m20">
+            <summary>
+            Row 2, column 0.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.Matrix3x3`1.m21">
+            <summary>
+            Row 2, column 1.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.Matrix3x3`1.m22">
+            <summary>
+            Row 2, column 2.
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Kinematics.Matrix3x3`1.Item(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="row"></param>
+            <param name="column"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Kinematics.PantographOffsets">
+            <summary>
+            Linear displacement between the frames of a pantograph mechanism, with each field corresponding to the <see cref="F:Haply.HardwareAPI.Kinematics.FrameOffsets.a"/> value of a given frame.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.PantographOffsets.l1">
+            <summary>
+            Arm 1 length.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.PantographOffsets.L1">
+            <summary>
+            Forearm 1 length.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.PantographOffsets.l2">
+            <summary>
+            Arm 2 length.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.PantographOffsets.L2">
+            <summary>
+            Forearm 2 length.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.PantographOffsets.ap">
+            <summary>
+            Separation between arm 1 and arm 2 shoulders, corresponding to <see cref="F:Haply.HardwareAPI.Kinematics.FrameOffsets.a"/>.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.PantographSolution.Pa">
+            <summary>
+            Elbow 1 position.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.PantographSolution.Pb">
+            <summary>
+            Elbow 2 position.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.PantographSolution.H">
+            <summary>
+            Unit direction vector from <see cref="F:Haply.HardwareAPI.Kinematics.PantographSolution.Pa"/> to <see cref="F:Haply.HardwareAPI.Kinematics.PantographSolution.Pb"/>.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.PantographSolution.h1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.PantographSolution.h2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Kinematics.PantographSolution.Pee">
+            <summary>
+            End-effector position.
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Kinematics.PantographSolution.thetaP2">
+            <summary>
+            CCW angle between arm 1 and forearm 1.
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Kinematics.PantographSolution.thetaP4">
+            <summary>
+            CCW angle between arm 2 and forearm 2.
+            </summary>
+        </member>
+    </members>
+</doc>

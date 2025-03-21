@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Haply.HardwareAPI.Runtime.Interop</name>
+    </assembly>
+    <members>
+        <member name="T:Haply.HardwareAPI.Runtime.Interop.DeviceInfoExt">
+            <summary>
+            Includes the identification and version information for a device, as well as the response header code returned by the wakeup request.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Runtime.Interop.DeviceInfoExt.deviceId">
+            <summary>
+            Full device ID.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Runtime.Interop.DeviceInfoExt.firmwareID">
+            <summary>
+            Full firmeware ID.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Interop.DeviceHandle">
+            <summary>
+            Contains information about an available device and the process consuming it.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Runtime.Interop.DeviceHandle.FILE_VERSION">
+            <summary>
+            File version expected by this API release.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Runtime.Interop.DeviceHandle.fileVersion">
+            <summary>
+            The file version of this struct.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Runtime.Interop.DeviceHandle.processInfo">
+            <summary>
+            The process consuming this device.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Runtime.Interop.DeviceHandle.responseHeaderCode">
+            <summary>
+            The header code returned by the device wakeup response.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Runtime.Interop.DeviceHandle.deviceInfo">
+            <summary>
+            Information about this device.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Interop.DeviceInfo">
+            <summary>
+            Includes the identification and version information for a device, as well as the response header code returned by the wakeup request.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Runtime.Interop.DeviceInfo.id">
+            <summary>
+            Device ID number.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Runtime.Interop.DeviceInfo.modelNumber">
+            <summary>
+            Device model number.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Runtime.Interop.DeviceInfo.firmwareVersion">
+            <summary>
+            Device firmeware version.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Runtime.Interop.DeviceInfo.hardwareVersion">
+            <summary>
+            Device hardware version.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Interop.Remote.JsonWriterExtensions.WriteDeviceInfo(Newtonsoft.Json.JsonWriter,Haply.HardwareAPI.Runtime.Interop.DeviceInfo)">
+            <summary>
+            
+            </summary>
+            <param name="deviceInfo"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Interop.Remote.JsonWriterExtensions.WriteDeviceInfoExt(Newtonsoft.Json.JsonWriter,Haply.HardwareAPI.Runtime.Interop.DeviceInfoExt)">
+            <summary>
+            
+            </summary>
+            <param name="deviceInfoExt"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Interop.Remote.JsonWriterExtensions.WriteProcessInfo(Newtonsoft.Json.JsonWriter,Haply.HardwareAPI.Runtime.Interop.ProcessInfo)">
+            <summary>
+            
+            </summary>
+            <param name="processInfo"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Interop.Remote.JsonWriterExtensions.WriteEnvironmentInfo(Newtonsoft.Json.JsonWriter)">
+            <summary>
+            
+            </summary>
+            <param name="jsonWriter"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Interop.Remote.JsonWriterExtensions.WriteBuildInfo(Newtonsoft.Json.JsonWriter,System.Reflection.Assembly)">
+            <summary>
+            
+            </summary>
+            <param name="jsonWriter"></param>
+            <param name="assembly"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Interop.Remote.JsonWriterExtensions.WriteHello(Newtonsoft.Json.JsonWriter,System.Object,System.Byte,Haply.HardwareAPI.Runtime.Interop.DeviceInfo,System.String,Haply.HardwareAPI.Runtime.Interop.DeviceInfoSource,System.Nullable{Haply.HardwareAPI.Runtime.Interop.DeviceInfoExt},Haply.HardwareAPI.Runtime.Interop.DeviceStatus)">
+            <summary>
+            
+            </summary>
+            <param name="deviceInfo"></param>
+        </member>
+    </members>
+</doc>

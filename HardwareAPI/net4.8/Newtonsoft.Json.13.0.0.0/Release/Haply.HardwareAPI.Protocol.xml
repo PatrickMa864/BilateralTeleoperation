@@ -1,0 +1,1087 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Haply.HardwareAPI.Protocol</name>
+    </assembly>
+    <members>
+        <member name="T:Haply.HardwareAPI.Protocol.ControllerHeaderTypeGenerator">
+            <summary>
+            /
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerHeaderTypeGenerator.#ctor(Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider@)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerHeaderTypeGenerator.GenerateHeaderTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ControllerUsagePatternGenerator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerUsagePatternGenerator.#ctor(Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerUsagePatternGenerator.Generate(Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder@)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.DiscoveryHeaderTypeGenerator">
+            <summary>
+            /
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.DiscoveryHeaderTypeGenerator.#ctor(Haply.HardwareAPI.Protocol.IDiscoveryHeaderTypeProvider@)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.DiscoveryHeaderTypeGenerator.GenerateHeaderTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.FullHeaderTypeGenerator">
+            <summary>
+            /
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.FullHeaderTypeGenerator.#ctor(Haply.HardwareAPI.Protocol.IFullHeaderTypeProvider@)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.FullHeaderTypeGenerator.GenerateHeaderTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ToolHeaderTypeGenerator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ToolHeaderTypeGenerator.#ctor(Haply.HardwareAPI.Protocol.IToolHeaderTypeProvider@)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ToolHeaderTypeGenerator.GenerateHeaderTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.deviceWakeup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.deviceInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.deviceOrientation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.statusCurrent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.statusTemperature">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.statusPower">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.sim1Torque">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.sim1Angle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.sim1State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.sim2Force">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.sim2Position">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.sim2State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerHeaderTypeProvider.#ctor(Haply.HardwareAPI.Protocol.IControllerHandshakeHeaderTypeProvider)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ControllerParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.ControllerParameters.errorByte">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.ControllerParameters.temperatureSensorLayout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.ControllerParameters.motorCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.ControllerParameters.encoderCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.ControllerParameters.encoderElements">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.IFullHeaderTypeProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ControllerInfoMessageTypeGenerator">
+            <summary>
+            Generates <see cref="T:Haply.HardwareAPI.Protocol.MessageType"/> instances for requests and responses that do not depend on hardware configuration.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerInfoMessageTypeGenerator.#ctor(Haply.HardwareAPI.Protocol.IControllerHandshakeHeaderTypeProvider)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerInfoMessageTypeGenerator.GenerateDeviceMessageTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ControllerMessageTypeGenerator">
+            <summary>
+            Generates a <see cref="T:Haply.HardwareAPI.Protocol.MessageType"/> instance for the controller info response.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerMessageTypeGenerator.#ctor(Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider@)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerMessageTypeGenerator.#ctor(Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider@,Haply.HardwareAPI.Protocol.ControllerParameters@)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerMessageTypeGenerator.AssertParametersValid(Haply.HardwareAPI.Protocol.ControllerParameters@)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerMessageTypeGenerator.GenerateHostMessageTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerMessageTypeGenerator.GenerateDeviceMessageTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ControllerParametersUtility">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ControllerParametersUtility.AssertValid(Haply.HardwareAPI.Protocol.ControllerParameters@)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ToolHeaderTypeProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ToolHeaderTypeProvider.deviceWakeup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ToolHeaderTypeProvider.toolInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ToolHeaderTypeProvider.toolError">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ToolHeaderTypeProvider.toolState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ToolHeaderTypeProvider.toolStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ToolHeaderTypeProvider.#ctor(Haply.HardwareAPI.Protocol.IToolHandshakeHeaderTypeProvider)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ToolMessageTypeGenerator">
+            <summary>
+            Generates <see cref="T:Haply.HardwareAPI.Protocol.MessageType"/> instances for requests and responses that depend on handle hardware configuration.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ToolMessageTypeGenerator.#ctor(Haply.HardwareAPI.Protocol.IToolHeaderTypeProvider)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ToolMessageTypeGenerator.GenerateHostMessageTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ToolMessageTypeGenerator.GenerateDeviceMessageTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.DiscoveryHeaderTypeProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.DiscoveryHeaderTypeProvider.deviceWakeup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.DiscoveryHeaderTypeProvider.deviceInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.DiscoveryHeaderTypeProvider.toolInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.DiscoveryHeaderTypeProvider.#ctor(Haply.HardwareAPI.Protocol.IWakeupHeaderTypeProvider)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ToolInfoMessageTypeGenerator">
+            <summary>
+            Generates a <see cref="T:Haply.HardwareAPI.Protocol.MessageType"/> instance for the handle info response.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ToolInfoMessageTypeGenerator.#ctor(Haply.HardwareAPI.Protocol.IToolHandshakeHeaderTypeProvider)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ToolInfoMessageTypeGenerator.GenerateDeviceMessageTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="THeaderTypeProvider"></typeparam>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`1.m_HeaderTypeProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`1.GenerateHeaderTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`1.#ctor(`0@)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`1.Generate(Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder@)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`2">
+            <summary>
+            
+            </summary>
+            <typeparam name="THeaderTypeProvider"></typeparam>
+            <typeparam name="TParameters"></typeparam>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`2.m_Parameters">
+            <summary>
+            Backing field for <see cref="P:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`2.parameters"/>.
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`2.parameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`2.#ctor(`0@)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`2.#ctor(`0@,`1@)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`2.AssertParametersValid(`1@)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`2.Generate(Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder@,`1@)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.HeaderTypeGenerator`2.Generate(Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder@)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider.deviceOrientation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider.statusCurrent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider.statusTemperature">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider.statusPower">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider.sim1Torque">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider.sim1Angle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider.sim1State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider.sim2Force">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider.sim2Position">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IControllerHeaderTypeProvider.sim2State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.IToolHeaderTypeProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IToolHeaderTypeProvider.toolError">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IToolHeaderTypeProvider.toolState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IToolHeaderTypeProvider.toolStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.IProtocolDefinitionGenerator">
+            <summary>
+            Generates <see cref="T:Haply.HardwareAPI.Protocol.HeaderType"/> and/or <see cref="T:Haply.HardwareAPI.Protocol.MessageType"/> instances and registers them
+            via <see cref="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.AddHeaderType(Haply.HardwareAPI.Protocol.HeaderType)"/>,
+            <see cref="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.AddHostMessageType(Haply.HardwareAPI.Protocol.MessageType)"/>,
+            and <see cref="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.AddDeviceMessageType(Haply.HardwareAPI.Protocol.MessageType)"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.IProtocolDefinitionGenerator.Generate(Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder@)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.IWakeupHeaderTypeProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.IWakeupHeaderTypeProvider.deviceWakeup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.DiscoveryMessageTypeGenerator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.DiscoveryMessageTypeGenerator.#ctor(Haply.HardwareAPI.Protocol.IWakeupHeaderTypeProvider)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.DiscoveryMessageTypeGenerator.GenerateHostMessageTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.MessageTypeGenerator`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="THeaderTypeProvider"></typeparam>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.MessageTypeGenerator`1.m_HeaderTypeProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageTypeGenerator`1.GenerateHostMessageTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageTypeGenerator`1.GenerateDeviceMessageTypes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageTypeGenerator`1.#ctor(`0,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+            <param name="tags"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageTypeGenerator`1.Generate(Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder@)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.MessageTypeGenerator`2">
+            <summary>
+            
+            </summary>
+            <typeparam name="THeaderTypeProvider"></typeparam>
+            <typeparam name="TParameters"></typeparam>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.MessageTypeGenerator`2.m_Parameters">
+            <summary>
+            Backing field for <see cref="P:Haply.HardwareAPI.Protocol.MessageTypeGenerator`2.parameters"/>.
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.MessageTypeGenerator`2.parameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageTypeGenerator`2.#ctor(`0@,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageTypeGenerator`2.#ctor(`0@,`1@,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageTypeGenerator`2.AssertParametersValid(`1@)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageTypeGenerator`2.Generate(Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder@,`1@)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageTypeGenerator`2.Generate(Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder@)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.WakeupHeaderTypeProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.WakeupHeaderTypeProvider.deviceWakeup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.WakeupHeaderTypeProvider.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.DiscoveryUsagePatternGenerator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.DiscoveryUsagePatternGenerator.#ctor(Haply.HardwareAPI.Protocol.IDiscoveryHeaderTypeProvider)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.DiscoveryUsagePatternGenerator.Generate(Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder@)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ToolUsagePatternGenerator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ToolUsagePatternGenerator.#ctor(Haply.HardwareAPI.Protocol.IToolHeaderTypeProvider)">
+            <summary>
+            
+            </summary>
+            <param name="headerTypeProvider"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ToolUsagePatternGenerator.Generate(Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder@)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.HeaderType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.HeaderType.name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.HeaderType.code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.HeaderType.tags">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.JsonProtocolDefinitiontReader">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.JsonProtocolDefinitiontReader.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.JsonProtocolDefinitiontReader.Read(System.IO.Stream@)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.JsonProtocolDefinitionWriter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.JsonProtocolDefinitionWriter.Write(Haply.HardwareAPI.Protocol.ProtocolDefinition@,System.IO.Stream@)">
+            <summary>
+            
+            </summary>
+            <param name="protocol"></param>
+            <param name="stream"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.XmlProtocolDefinitionReader">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.XmlProtocolDefinitionReader.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.XmlProtocolDefinitionReader.Read(System.IO.Stream@)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.XmlProtocolDefinitionWriter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.XmlProtocolDefinitionWriter.Write(Haply.HardwareAPI.Protocol.ProtocolDefinition@,System.IO.Stream@)">
+            <summary>
+            
+            </summary>
+            <param name="protocol"></param>
+            <param name="stream"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.MessageField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.MessageField.name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.MessageField.type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.MessageField.discard">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageField.#ctor(System.String,Haply.HardwareAPI.Protocol.MessageDataType,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <param name="discard"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageField.#ctor(System.String,Haply.HardwareAPI.Protocol.MessageDataType)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageField.#ctor(Haply.HardwareAPI.Protocol.MessageDataType)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.MessageFields">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.MessageFields.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.MessageFields.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageFields.#ctor(Haply.HardwareAPI.Protocol.MessageField[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageFields.#ctor(System.ValueTuple{System.String,Haply.HardwareAPI.Protocol.MessageDataType}[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageFields.GetEnumerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ProtocolDefinition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.ProtocolDefinition.headerTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.ProtocolDefinition.hostMessageTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.ProtocolDefinition.deviceMessageTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.ProtocolDefinition.usagePatterns">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ProtocolDefinition.#ctor(System.Collections.Generic.IEnumerable{Haply.HardwareAPI.Protocol.HeaderType},System.Collections.Generic.IEnumerable{Haply.HardwareAPI.Protocol.MessageType},System.Collections.Generic.IEnumerable{Haply.HardwareAPI.Protocol.MessageType},System.Collections.Generic.IEnumerable{Haply.HardwareAPI.Protocol.UsagePattern})">
+            <summary>
+            
+            </summary>
+            <param name="headerTypes"></param>
+            <param name="requestMessageTypes"></param>
+            <param name="responseTypes"></param>
+            <param name="usagePatterns"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.headerTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.requestTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.responseTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.usagePatterns">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.TryGetDeviceMessageTypeForHeader(Haply.HardwareAPI.Protocol.HeaderType,Haply.HardwareAPI.Protocol.MessageType@)">
+            <summary>
+            
+            </summary>
+            <param name="headerType"></param>
+            <param name="responseType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.TryGetHostMessageTypeForHeader(Haply.HardwareAPI.Protocol.HeaderType,Haply.HardwareAPI.Protocol.MessageType@)">
+            <summary>
+            
+            </summary>
+            <param name="headerType"></param>
+            <param name="requestType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.TryGetUsagePatternForMessageAndTags(Haply.HardwareAPI.Protocol.MessageType,System.Collections.Generic.IEnumerable{System.String},Haply.HardwareAPI.Protocol.UsagePattern@)">
+            <summary>
+            
+            </summary>
+            <param name="messageType"></param>
+            <param name="tags"></param>
+            <param name="usagePattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.AddHeaderType(Haply.HardwareAPI.Protocol.HeaderType)">
+            <summary>
+            
+            </summary>
+            <param name="headerType"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.AddHostMessageType(Haply.HardwareAPI.Protocol.MessageType)">
+            <summary>
+            
+            </summary>
+            <param name="messageType"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.AddDeviceMessageType(Haply.HardwareAPI.Protocol.MessageType)">
+            <summary>
+            
+            </summary>
+            <param name="messageType"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.AddUsagePattern(Haply.HardwareAPI.Protocol.UsagePattern)">
+            <summary>
+            
+            </summary>
+            <param name="usagePattern"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.GetProtocolDefinition">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.ProtocolDefinitionBuilder.Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.MessageType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.MessageType.name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.MessageType.headerType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.MessageType.fixedDataBytes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.MessageType.fields">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.MessageType.tags">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageType.#ctor(System.String,Haply.HardwareAPI.Protocol.HeaderType,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="headerType"></param>
+            <param name="tags"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageType.#ctor(System.String,Haply.HardwareAPI.Protocol.HeaderType,System.Collections.Generic.IEnumerable{System.String},Haply.HardwareAPI.Protocol.MessageFields)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="headerType"></param>
+            <param name="tags"></param>
+            <param name="fields"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageType.#ctor(System.String,Haply.HardwareAPI.Protocol.HeaderType,System.Collections.Generic.IEnumerable{System.String},Haply.HardwareAPI.Protocol.MessageField[])">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="headerType"></param>
+            <param name="tags"></param>
+            <param name="fields"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.MessageType.#ctor(System.String,Haply.HardwareAPI.Protocol.HeaderType,System.Collections.Generic.IEnumerable{System.String},System.ValueTuple{System.String,Haply.HardwareAPI.Protocol.MessageDataType}[])">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="headerType"></param>
+            <param name="tags"></param>
+            <param name="fields"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Protocol.UsagePattern">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.UsagePattern.hostMessageType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Protocol.UsagePattern.deviceMessageTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Protocol.UsagePattern.tags">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.UsagePattern.SendOnly(Haply.HardwareAPI.Protocol.MessageType,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Send a request with no expected response.
+            </summary>
+            <param name="requestType"></param>
+            <param name="tags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.UsagePattern.SendReceive(Haply.HardwareAPI.Protocol.MessageType,Haply.HardwareAPI.Protocol.MessageType,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Send a request and receive a specific response.
+            </summary>
+            <param name="requestType"></param>
+            <param name="responseType"></param>
+            <param name="tags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.UsagePattern.IndeterminateSendReceive(Haply.HardwareAPI.Protocol.MessageType,System.Collections.Generic.IEnumerable{Haply.HardwareAPI.Protocol.MessageType},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Send a request and receive one of 2 or more possible responses.
+            </summary>
+            <param name="requestType"></param>
+            <param name="responseTypes"></param>
+            <param name="tags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Protocol.UsagePattern.ArbitraryReceive(Haply.HardwareAPI.Protocol.MessageType,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Receive an unprovoked message.
+            </summary>
+            <param name="responseType"></param>
+            <param name="tags"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

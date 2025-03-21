@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Haply.HardwareAPI.Runtime.Generated</name>
+    </assembly>
+    <members>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.HeaderCode">
+            <summary>
+            Enumeration containing header bytes for the HardwareAPI's inbound and outbound message types.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.JointTorquesRequest">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>JOINT_TORQUES</b> request.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.JointTorquesRequestWriter">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageWriter`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.JointTorquesRequest"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.JointTorquesRequestWriter.Write(System.IO.BinaryWriter@,Haply.HardwareAPI.Runtime.Generated.JointTorquesRequest@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryWriter"/> to serialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.JointTorquesRequest"/> struct.
+            </summary>
+            <param name="writer">BinaryWriter to use.</param>
+            <param name="data">Data to serialize and write to <paramref name="writer"/>'s <see cref="P:System.IO.BinaryWriter.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.JointAnglesRequest">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>JOINT_ANGLES</b> request.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.JointAnglesRequestWriter">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageWriter`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.JointAnglesRequest"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.JointAnglesRequestWriter.Write(System.IO.BinaryWriter@,Haply.HardwareAPI.Runtime.Generated.JointAnglesRequest@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryWriter"/> to serialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.JointAnglesRequest"/> struct.
+            </summary>
+            <param name="writer">BinaryWriter to use.</param>
+            <param name="data">Data to serialize and write to <paramref name="writer"/>'s <see cref="P:System.IO.BinaryWriter.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.EndEffectorForceRequest">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>END_EFFECTOR_FORCE</b> request.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.EndEffectorForceRequestWriter">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageWriter`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.EndEffectorForceRequest"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.EndEffectorForceRequestWriter.Write(System.IO.BinaryWriter@,Haply.HardwareAPI.Runtime.Generated.EndEffectorForceRequest@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryWriter"/> to serialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.EndEffectorForceRequest"/> struct.
+            </summary>
+            <param name="writer">BinaryWriter to use.</param>
+            <param name="data">Data to serialize and write to <paramref name="writer"/>'s <see cref="P:System.IO.BinaryWriter.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.EndEffectorPositionRequest">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>END_EFFECTOR_POSITION</b> request.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.EndEffectorPositionRequestWriter">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageWriter`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.EndEffectorPositionRequest"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.EndEffectorPositionRequestWriter.Write(System.IO.BinaryWriter@,Haply.HardwareAPI.Runtime.Generated.EndEffectorPositionRequest@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryWriter"/> to serialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.EndEffectorPositionRequest"/> struct.
+            </summary>
+            <param name="writer">BinaryWriter to use.</param>
+            <param name="data">Data to serialize and write to <paramref name="writer"/>'s <see cref="P:System.IO.BinaryWriter.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.ToolErrorRequest">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>TOOL_ERROR</b> request.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.ToolErrorRequestWriter">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageWriter`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.ToolErrorRequest"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.ToolErrorRequestWriter.Write(System.IO.BinaryWriter@,Haply.HardwareAPI.Runtime.Generated.ToolErrorRequest@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryWriter"/> to serialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.ToolErrorRequest"/> struct.
+            </summary>
+            <param name="writer">BinaryWriter to use.</param>
+            <param name="data">Data to serialize and write to <paramref name="writer"/>'s <see cref="P:System.IO.BinaryWriter.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.ToolStateMessage">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>TOOL_STATE</b> message.
+            <br></br>
+            Note that data length specifiers are omitted. Fields corresponding to variable length data will
+            be initialized with correctly-sized arrays at each read. Use the <see cref="P:System.Array.Length"/>
+            property to check the number of bytes received in each message.
+            <br></br>
+            To implement buffered read/write operations, please use the <see cref="T:Haply.HardwareAPI.Runtime.Generated.BufferedToolStateMessage"/> variant.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.BufferedToolStateMessage">
+            <summary>
+            Buffered payload struct with fields corresponding to the contents of a <b>TOOL_STATE</b> message.
+            <br></br>
+            Note that variable data fields and their data length specifiers are replaced by respective buffer,
+            offset, and length fields, allowing for non-allocating read/write operations.
+            <br></br>
+            To implement direct read/write operations, please use the un-buffered <see cref="T:Haply.HardwareAPI.Runtime.Generated.ToolStateMessage"/> variant.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.ToolStateMessageWriter">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageWriter`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.ToolStateMessage"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.ToolStateMessageWriter.Write(System.IO.BinaryWriter@,Haply.HardwareAPI.Runtime.Generated.ToolStateMessage@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryWriter"/> to serialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.ToolStateMessage"/> struct.
+            </summary>
+            <param name="writer">BinaryWriter to use.</param>
+            <param name="data">Data to serialize and write to <paramref name="writer"/>'s <see cref="P:System.IO.BinaryWriter.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.BufferedToolStateMessageDataWriter">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageWriter`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.BufferedToolStateMessage"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.BufferedToolStateMessageDataWriter.Write(System.IO.BinaryWriter@,Haply.HardwareAPI.Runtime.Generated.BufferedToolStateMessage@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryWriter"/> to serialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.BufferedToolStateMessage"/> struct.
+            </summary>
+            <param name="writer">BinaryWriter to use.</param>
+            <param name="data">Data to serialize and write to <paramref name="writer"/>'s <see cref="P:System.IO.BinaryWriter.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.DeviceInfoResponse">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>DEVICE_INFO</b> response.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.DeviceInfoResponseReader">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageReader`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.DeviceInfoResponse"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.DeviceInfoResponseReader.Read(System.IO.BinaryReader@,Haply.HardwareAPI.Runtime.Generated.DeviceInfoResponse@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryReader"/> to deserialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.DeviceInfoResponse"/> struct.
+            </summary>
+            <param name="reader">BinaryReader to use.</param>
+            <param name="data">Parsed data read from <paramref name="reader"/>'s <see cref="P:System.IO.BinaryReader.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.ToolInfoResponse">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>TOOL_INFO</b> response.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.ToolInfoResponseReader">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageReader`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.ToolInfoResponse"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.ToolInfoResponseReader.Read(System.IO.BinaryReader@,Haply.HardwareAPI.Runtime.Generated.ToolInfoResponse@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryReader"/> to deserialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.ToolInfoResponse"/> struct.
+            </summary>
+            <param name="reader">BinaryReader to use.</param>
+            <param name="data">Parsed data read from <paramref name="reader"/>'s <see cref="P:System.IO.BinaryReader.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.DeviceOrientationResponse">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>DEVICE_ORIENTATION</b> response.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.DeviceOrientationResponseReader">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageReader`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.DeviceOrientationResponse"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.DeviceOrientationResponseReader.Read(System.IO.BinaryReader@,Haply.HardwareAPI.Runtime.Generated.DeviceOrientationResponse@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryReader"/> to deserialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.DeviceOrientationResponse"/> struct.
+            </summary>
+            <param name="reader">BinaryReader to use.</param>
+            <param name="data">Parsed data read from <paramref name="reader"/>'s <see cref="P:System.IO.BinaryReader.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.DevicePowerResponse">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>DEVICE_POWER</b> response.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.DevicePowerResponseReader">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageReader`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.DevicePowerResponse"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.DevicePowerResponseReader.Read(System.IO.BinaryReader@,Haply.HardwareAPI.Runtime.Generated.DevicePowerResponse@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryReader"/> to deserialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.DevicePowerResponse"/> struct.
+            </summary>
+            <param name="reader">BinaryReader to use.</param>
+            <param name="data">Parsed data read from <paramref name="reader"/>'s <see cref="P:System.IO.BinaryReader.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.DeviceTemperatureResponse">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>DEVICE_TEMPERATURE</b> response.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.DeviceTemperatureResponseReader">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageReader`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.DeviceTemperatureResponse"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.DeviceTemperatureResponseReader.Read(System.IO.BinaryReader@,Haply.HardwareAPI.Runtime.Generated.DeviceTemperatureResponse@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryReader"/> to deserialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.DeviceTemperatureResponse"/> struct.
+            </summary>
+            <param name="reader">BinaryReader to use.</param>
+            <param name="data">Parsed data read from <paramref name="reader"/>'s <see cref="P:System.IO.BinaryReader.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.MotorCurrentsResponse">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>MOTOR_CURRENTS</b> response.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.MotorCurrentsResponseReader">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageReader`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.MotorCurrentsResponse"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.MotorCurrentsResponseReader.Read(System.IO.BinaryReader@,Haply.HardwareAPI.Runtime.Generated.MotorCurrentsResponse@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryReader"/> to deserialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.MotorCurrentsResponse"/> struct.
+            </summary>
+            <param name="reader">BinaryReader to use.</param>
+            <param name="data">Parsed data read from <paramref name="reader"/>'s <see cref="P:System.IO.BinaryReader.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.JointStatesResponse">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>JOINT_STATES</b> response.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.JointStatesResponseReader">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageReader`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.JointStatesResponse"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.JointStatesResponseReader.Read(System.IO.BinaryReader@,Haply.HardwareAPI.Runtime.Generated.JointStatesResponse@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryReader"/> to deserialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.JointStatesResponse"/> struct.
+            </summary>
+            <param name="reader">BinaryReader to use.</param>
+            <param name="data">Parsed data read from <paramref name="reader"/>'s <see cref="P:System.IO.BinaryReader.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.EndEffectorStateResponse">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>END_EFFECTOR_STATE</b> response.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.EndEffectorStateResponseReader">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageReader`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.EndEffectorStateResponse"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.EndEffectorStateResponseReader.Read(System.IO.BinaryReader@,Haply.HardwareAPI.Runtime.Generated.EndEffectorStateResponse@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryReader"/> to deserialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.EndEffectorStateResponse"/> struct.
+            </summary>
+            <param name="reader">BinaryReader to use.</param>
+            <param name="data">Parsed data read from <paramref name="reader"/>'s <see cref="P:System.IO.BinaryReader.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.ToolErrorResponse">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>TOOL_ERROR</b> response.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.ToolErrorResponseReader">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageReader`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.ToolErrorResponse"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.ToolErrorResponseReader.Read(System.IO.BinaryReader@,Haply.HardwareAPI.Runtime.Generated.ToolErrorResponse@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryReader"/> to deserialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.ToolErrorResponse"/> struct.
+            </summary>
+            <param name="reader">BinaryReader to use.</param>
+            <param name="data">Parsed data read from <paramref name="reader"/>'s <see cref="P:System.IO.BinaryReader.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.ToolStatusMessage">
+            <summary>
+            Payload struct with fields corresponding to the contents of a <b>TOOL_STATUS</b> message.
+            <br></br>
+            Note that data length specifiers are omitted. Fields corresponding to variable length data will
+            be initialized with correctly-sized arrays at each read. Use the <see cref="P:System.Array.Length"/>
+            property to check the number of bytes received in each message.
+            <br></br>
+            To implement buffered read/write operations, please use the <see cref="T:Haply.HardwareAPI.Runtime.Generated.BufferedToolStatusMessage"/> variant.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.BufferedToolStatusMessage">
+            <summary>
+            Buffered payload struct with fields corresponding to the contents of a <b>TOOL_STATUS</b> message.
+            <br></br>
+            Note that variable data fields and their data length specifiers are replaced by respective buffer,
+            offset, and length fields, allowing for non-allocating read/write operations.
+            <br></br>
+            To implement direct read/write operations, please use the un-buffered <see cref="T:Haply.HardwareAPI.Runtime.Generated.ToolStatusMessage"/> variant.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.ToolStatusMessageReader">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageReader`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.ToolStatusMessage"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.ToolStatusMessageReader.Read(System.IO.BinaryReader@,Haply.HardwareAPI.Runtime.Generated.ToolStatusMessage@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryReader"/> to deserialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.ToolStatusMessage"/> struct.
+            </summary>
+            <param name="reader">BinaryReader to use.</param>
+            <param name="data">Parsed data read from <paramref name="reader"/>'s <see cref="P:System.IO.BinaryReader.BaseStream"/>.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Generated.BufferedToolStatusMessageDataReader">
+            <summary>
+            <see cref="T:Haply.HardwareAPI.Runtime.IMessageReader`1"/> implementation for <see cref="T:Haply.HardwareAPI.Runtime.Generated.BufferedToolStatusMessage"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.BufferedToolStatusMessageDataReader.Read(System.IO.BinaryReader@,Haply.HardwareAPI.Runtime.Generated.BufferedToolStatusMessage@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryReader"/> to deserialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.BufferedToolStatusMessage"/> struct.
+            </summary>
+            <param name="reader">BinaryReader to use.</param>
+            <param name="data">Parsed data read from <paramref name="reader"/>'s <see cref="P:System.IO.BinaryReader.BaseStream"/>.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.BufferedToolStatusMessageDataReader.Read(System.IO.BinaryReader@,System.Byte[]@,System.Int32@,Haply.HardwareAPI.Runtime.Generated.BufferedToolStatusMessage@)">
+            <summary>
+            Uses a <see cref="T:System.IO.BinaryReader"/> to deserialize the fields of a <see cref="T:Haply.HardwareAPI.Runtime.Generated.BufferedToolStatusMessage"/> struct.
+            </summary>
+            <param name="reader">BinaryReader to use.</param>
+            <param name="userDataBuffer">Buffer to read into. Will be assigned to <see cref="F:Haply.HardwareAPI.Runtime.Generated.BufferedToolStatusMessage.userDataBuffer"/> (without copying).</param>
+            <param name="userDataOffset">Offset to apply when reading into <paramref name="userDataBuffer"/>. Will be assigned to <see cref="F:Haply.HardwareAPI.Runtime.Generated.BufferedToolStatusMessage.userDataOffset"/>.</param>
+            <param name="data">Parsed data read from <paramref name="reader"/>'s <see cref="P:System.IO.BinaryReader.BaseStream"/>.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.MessageUtility.InitializeMessageReaderTable(System.Boolean)">
+            <summary>
+            Initializes a lookup table of header codes to response reader instances.
+            </summary>
+            <param name="buffered">Whether buffered readers should be used, when applicable.</param>
+            <returns>A fully initialized lookup table. Some indices may be empty.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Generated.MessageUtility.InitializeMessageWriterTable(System.Boolean)">
+            <summary>
+            Initializes a lookup table of header codes to request writer instances.
+            </summary>
+            <param name="buffered">Whether buffered writers should be used, when applicable.</param>
+            <returns>A fully initialized lookup table. Some indices may be empty.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Haply.IO.Ports</name>
+    </assembly>
+    <members>
+        <member name="M:Haply.IO.Ports.SerialUtility.OpenSerialStream(System.String,Haply.IO.Ports.SerialPort@)">
+            <summary>
+            Initializes a instance and prepares it by calling <see cref="M:Haply.IO.Ports.SerialPort.Open"/>,
+            <see cref="M:Haply.IO.Ports.SerialPort.DiscardInBuffer"/>, and <see cref="M:Haply.IO.Ports.SerialPort.DiscardOutBuffer"/>.
+            </summary>
+            <param name="portName">The name of the serial port to open.</param>
+            <param name="serialPort">The <see cref="T:Haply.IO.Ports.SerialPort"/> instance.</param>
+            <returns>The value of <see cref="P:Haply.IO.Ports.SerialPort.BaseStream"/>.</returns>
+        </member>
+        <member name="T:Haply.IO.IStream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.IO.IStream.BytesToRead">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.IO.IStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.IO.IStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.IO.IStream.EndRead(System.IAsyncResult)">
+            <summary>
+            
+            </summary>
+            <param name="asyncResult"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.IO.IStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:Haply.IO.IStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <param name="callback"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.IO.IStream.EndWrite(System.IAsyncResult)">
+            <summary>
+            
+            </summary>
+            <param name="asyncResult"></param>
+        </member>
+    </members>
+</doc>

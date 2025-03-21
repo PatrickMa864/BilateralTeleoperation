@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Haply.HardwareAPI</name>
+    </assembly>
+    <members>
+        <member name="T:Haply.HardwareAPI.Discovery.DiscoveryCallback">
+            <summary>
+            Callback for device discovery.
+            </summary>
+            <param name="idCode">The response header code received in response to the <see cref="F:Haply.HardwareAPI.Runtime.Generated.HeaderCode.DEVICE_WAKEUP"/> request.</param>
+            <param name="deviceInfo">The info data received as part of the response payload.</param>
+            <param name="deviceAddress"></param>
+            <param name="addressNamespace"></param>
+            <param name="source"></param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Discovery.ConnectionExplorer">
+            <summary>
+            Consumes <see cref="T:Haply.HardwareAPI.Discovery.Sources.IConnectionSource"/> instances to generate device discovery agents.
+            Provides the <see cref="E:Haply.HardwareAPI.Discovery.ConnectionExplorer.onDiscover"/> and <see cref="M:Haply.HardwareAPI.Discovery.ConnectionExplorer.GetDevices"/> members for event or query-based device access.
+            </summary>
+        </member>
+        <member name="E:Haply.HardwareAPI.Discovery.ConnectionExplorer.onDiscover">
+            <summary>
+            Event raised whenever one of this instance's agents discovers a device.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionExplorer.#ctor">
+            <summary>
+            Create a new instance. By default, no sources are registered. Use <see cref="M:Haply.HardwareAPI.Discovery.ConnectionExplorer.RegisterSource``1(Haply.HardwareAPI.Discovery.Sources.IConnectionSource{``0})"/> to begin device discovery.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionExplorer.GetDevices">
+            <summary>
+            Enumerate the devices identified through this provider's registered sources.
+            </summary>
+            <returns>A list of identified devices.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionExplorer.RegisterSource``1(Haply.HardwareAPI.Discovery.Sources.IConnectionSource{``0})">
+            <summary>
+            Register a new device source. Only one instance of each concrete source type is allowed.
+            </summary>
+            <typeparam name="TAddress">The type of address used by the source.</typeparam>
+            <param name="source">The source to register.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionExplorer.TryGetSource``1(``0@)">
+            <summary>
+            Lookup whether a source of a given type has been registered.
+            </summary>
+            <typeparam name="TSource">The type of source to lookup.</typeparam>
+            <param name="source">The source, if registered.</param>
+            <returns>True, if a source of the given type has been registered.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionExplorer.TryGetSource(System.String,Haply.HardwareAPI.Discovery.Sources.IConnectionSource@)">
+            <summary>
+            Lookup whether a source with a given address namespace has been registered.
+            </summary>
+            <param name="addressNamespace">The address namespace to lookup.</param>
+            <param name="source">The source, if registered.</param>
+            <returns>True, if a source with the given address namespace has been registered.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionExplorer.GetSources">
+            <summary>
+            Enumerate the sources registered with this provider.
+            </summary>
+            <returns>A read-only enumeration of all <see cref="T:Haply.HardwareAPI.Discovery.Sources.IConnectionSource"/> instances registered with this provider.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionExplorer.TryGetAgent``1(Haply.HardwareAPI.Discovery.Sources.IConnectionSource{``0},Haply.HardwareAPI.Discovery.ConnectionExplorer.DiscoveryAgent@)">
+            <summary>
+            Attempt to access the discovery agent for a given source.
+            </summary>
+            <typeparam name="TAddress">The tpye of address used by the source.</typeparam>
+            <param name="source">The source to lookup the agent for.</param>
+            <param name="agent">The agent assigned to the source, if registered.</param>
+            <returns>True, if the source is registered with this instance.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionExplorer.Dispose">
+            <summary>
+            Calls <see cref="M:Haply.HardwareAPI.Discovery.ConnectionExplorer.DiscoveryAgent.Dispose"/> on the agent belonging to each of this instance's registered sources.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionExplorerExtensions.InferDeviceStatus(Haply.HardwareAPI.Discovery.ConnectionExplorer,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="addressNamespace"></param>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionExplorerExtensions.InferDeviceStatus(Haply.HardwareAPI.Discovery.ConnectionExplorer,System.String,System.String,Haply.HardwareAPI.Discovery.Sources.IConnectionSource@)">
+            <summary>
+            
+            </summary>
+            <param name="addressNamespace"></param>
+            <param name="address"></param>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionSourceExtensions.TryOpenStream``1(Haply.HardwareAPI.Discovery.Sources.IConnectionSource{``0},``0,System.IO.Stream@)">
+            <summary>
+            Attempt to access the I/O stream for an available address.
+            </summary>
+            <param name="address">Device to initialize an I/O stream for.</param>
+            <param name="stream">I/O stream for the queried device.</param>
+            <returns>True, if the device exists and the I/O stream was initialized successfully.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionSourceExtensions.TryOpenStream``2(Haply.HardwareAPI.Discovery.Sources.IConnectionSource{``0,``1},``0,System.IO.Stream@,``1@)">
+            <summary>
+            Attempt to access the I/O stream for an available address.
+            </summary>
+            <param name="address">Device to initialize an I/O stream for.</param>
+            <param name="stream">I/O stream for the queried device.</param>
+            <param name="provider">The object from which <paramref name="stream"/> was obtained.</param>
+            <returns>True, if the device exists and the I/O stream was initialized successfully.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.ConnectionSourceExtensions.InferDeviceStatus(Haply.HardwareAPI.Discovery.Sources.IConnectionSource,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Discovery.Sources.IConnectionSource">
+            <summary>
+            Provides connection discovery inputs for a specific communication type.
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Discovery.Sources.IConnectionSource.addressNamespace">
+            <summary>
+            Human-readable name for this source.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Discovery.Sources.IConnectionSource`1">
+            <summary>
+            Provides connection discovery inputs for a specific communication type.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.Sources.IConnectionSource`1.GetAddresses">
+            <summary>
+            Returns a read-only enumeration of addresses available through this source.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.Sources.IConnectionSource`1.TryOpenStream(`0,System.IO.Stream@,System.Exception@)">
+            <summary>
+            Attempt to access the I/O stream for an available address.
+            </summary>
+            <param name="address">Device to initialize an I/O stream for.</param>
+            <param name="stream">I/O stream for target address.</param>
+            <param name="exception">The exception raised, if the stream could not be initialized.</param>
+            <returns>True, if the I/O stream was initialized successfully.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.Sources.IConnectionSource`1.CloseStream(System.IO.Stream)">
+            <summary>
+            Close the stream and dispose any related resources, if managed by this source.
+            </summary>
+            <param name="stream">The stream to clean up.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.Sources.IConnectionSource`1.TryParse(System.String,`0@)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Discovery.Sources.IConnectionSource`2">
+            <summary>
+            Provides connection discovery inputs for a specific communication type.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Discovery.Sources.IConnectionSource`2.TryOpenStream(`0,System.IO.Stream@,`1@,System.Exception@)">
+            <summary>
+            Attempt to access the I/O stream for an available address.
+            </summary>
+            <param name="address">Device to initialize an I/O stream for.</param>
+            <param name="stream">I/O stream for target address.</param>
+            <param name="resource">The object responsible for <paramref name="stream"/>.</param>
+            <param name="exception">The exception raised, if the stream could not be initialized.</param>
+            <returns>True, if the resource exists and the I/O stream was initialized successfully.</returns>
+        </member>
+    </members>
+</doc>

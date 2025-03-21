@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Haply.HardwareAPI.Runtime</name>
+    </assembly>
+    <members>
+        <member name="T:Haply.HardwareAPI.Runtime.AsyncConnection">
+            <summary>
+            Sends and receives messages without knowing the order that messages will be received in.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.AsyncConnection.VariegatedResponse">
+            <summary>
+            Base class for request types that have two or more possible response types.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Runtime.AsyncConnection.VariegatedResponse.mutex">
+            <summary>
+            The mutex object used to synchronize this <see cref="T:Haply.HardwareAPI.Runtime.AsyncConnection.VariegatedResponse"/> instance's state between I/O threads.
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Runtime.AsyncConnection.VariegatedResponse.received">
+            <summary>
+            Whether or not this <see cref="T:Haply.HardwareAPI.Runtime.AsyncConnection.VariegatedResponse"/> instance's response type has been resolved and message data received.
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Runtime.AsyncConnection.VariegatedResponse.headerCode">
+            <summary>
+            The header code received.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.AsyncConnection.VariegatedResponse.#ctor">
+            <summary>
+            Initializes the <see cref="F:Haply.HardwareAPI.Runtime.AsyncConnection.VariegatedResponse.mutex"/> using an <see cref="T:System.Object"/> instance.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.AsyncConnection.VariegatedResponse.Reset">
+            <summary>
+            Sets <see cref="P:Haply.HardwareAPI.Runtime.AsyncConnection.VariegatedResponse.received"/> to <b>false</b> and <see cref="P:Haply.HardwareAPI.Runtime.AsyncConnection.VariegatedResponse.headerCode"/> to <b>default</b>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.AsyncConnection.InitializeMessageWriters">
+            <summary>
+            Optional override called during construction. Use this to initialize any <see cref="T:Haply.HardwareAPI.Runtime.IMessageWriter"/> instances required for communication.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.AsyncConnection.InitializeMessageReaders">
+            <summary>
+            Optional override called during construction. Use this to initialize any <see cref="T:Haply.HardwareAPI.Runtime.IMessageReader"/> instances required for communication.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.AsyncConnection.InitializePayloadMutexes">
+            <summary>
+            Optional override called during construction. Use this to initialize any mutex <see cref="T:System.Object"/> instances required for communication.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.AsyncConnection.InitializeResponseFields">
+            <summary>
+            Optional override called during construction. Use this to initialize any <see cref="T:Haply.HardwareAPI.Runtime.AsyncConnection.VariegatedResponse"/>-derived instances required for communication.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.AsyncConnection.ReadMessage(System.Byte,System.IO.BinaryReader)">
+            <summary>
+            Override this to implement header code-dependent message reading.
+            </summary>
+            <param name="headerCode">The header code received.</param>
+            <param name="binaryReader">The binary reader to read the subsequent message contents from.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.BufferedReaderBase.ReadIntoBuffer(System.IO.BinaryReader@,System.Byte[]@,System.Int32@,System.Int32@)">
+            <summary>
+            Reads a number of bytes by calling <see cref="M:System.IO.BinaryReader.ReadByte"/> and storing the output in <paramref name="buffer"/> at the specified <paramref name="offset"/>.
+            </summary>
+            <param name="reader">Binary reader to read with.</param>
+            <param name="buffer">Buffer to read into.</param>
+            <param name="offset">Offset to apply when reading into <paramref name="buffer"/>.</param>
+            <param name="length">Number of bytes to read.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.Connection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Haply.HardwareAPI.Runtime.Connection.onSend">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Haply.HardwareAPI.Runtime.Connection.onReceive">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Runtime.Connection.stream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Runtime.Connection.readStream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Runtime.Connection.writeStream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Runtime.Connection.streamReader">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Runtime.Connection.streamWriter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Connection.#ctor(System.IO.Stream,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="bufferLength"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.Connection.SendReceive(System.ValueTuple{System.Byte,System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.GenericConnection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.GenericConnection.#ctor(System.IO.Stream,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="bufferLength"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.GenericConnection.LoadMessageReaderTable(Haply.HardwareAPI.Runtime.IMessageReader[])">
+            <summary>
+            
+            </summary>
+            <param name="table"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.GenericConnection.LoadMessageWriterTable(Haply.HardwareAPI.Runtime.IMessageWriter[])">
+            <summary>
+            
+            </summary>
+            <param name="table"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.GenericConnection.SendReceive``1(System.Byte)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResponseData"></typeparam>
+            <param name="headerCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.GenericConnection.SendReceive``2(System.Byte,``0@)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TRequestData"></typeparam>
+            <typeparam name="TResponseData"></typeparam>
+            <param name="headerCode"></param>
+            <param name="requestData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.IMessageReader.Read(System.IO.BinaryReader@)">
+            <summary>
+            Read a payload struct from a byte stream.
+            </summary>
+            <param name="reader">Binary reader to read with.</param>
+        </member>
+        <member name="P:Haply.HardwareAPI.Runtime.IMessageReader`1.data">
+            <summary>
+            The last payload struct read by <see cref="M:Haply.HardwareAPI.Runtime.IMessageReader.Read(System.IO.BinaryReader@)"/>.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.IMessageReader`1.Read(System.IO.BinaryReader@,`0@)">
+            <summary>
+            Read a payload struct (<paramref name="data"/>) from a byte stream.
+            </summary>
+            <param name="reader">Binary reader to read with.</param>
+            <param name="data">Message data read.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.IMessageWriter.Write(System.IO.BinaryWriter@)">
+            <summary>
+            Write the payload struct to a byte stream.
+            </summary>
+            <param name="writer">Binary writer to write with.</param>
+        </member>
+        <member name="P:Haply.HardwareAPI.Runtime.IMessageWriter`1.data">
+            <summary>
+            THe payload struct to write when <see cref="M:Haply.HardwareAPI.Runtime.IMessageWriter.Write(System.IO.BinaryWriter@)"/> is next called.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.IMessageWriter`1.Write(System.IO.BinaryWriter@,`0@)">
+            <summary>
+            Write the payload struct (<paramref name="data"/>) to a byte stream.
+            </summary>
+            <param name="writer">Binary writer to write with.</param>
+            <param name="data">Message data to write.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.MessageReaderExtensions.Read(Haply.HardwareAPI.Runtime.IMessageReader,System.IO.BinaryReader@,System.Int32@)">
+            <summary>
+            Calls <see cref="M:Haply.HardwareAPI.Runtime.IMessageReader.Read(System.IO.BinaryReader@)"/> and returns the number of bytes read from the <see cref="P:System.IO.BinaryWriter.BaseStream"/>.
+            </summary>
+            <param name="messageReader">Message reader.</param>
+            <param name="reader">Binary reader to read with.</param>
+            <param name="length">Number of bytes written.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.MessageReaderExtensions.Read``1(Haply.HardwareAPI.Runtime.IMessageReader{``0},System.IO.BinaryReader@,``0@,System.Int32@)">
+            <summary>
+            Calls <see cref="M:Haply.HardwareAPI.Runtime.IMessageReader`1.Read(System.IO.BinaryReader@,`0@)"/> and returns the number of bytes read from the <see cref="P:System.IO.BinaryWriter.BaseStream"/>.
+            </summary>
+            <typeparam name="T">The type of message data payload to read.</typeparam>
+            <param name="messageReader">Message reader.</param>
+            <param name="reader">Binary reader to read with.</param>
+            <param name="data">Message data read.</param>
+            <param name="length">Number of bytes read.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.MessageWriterExtensions.Write(Haply.HardwareAPI.Runtime.IMessageWriter,System.IO.BinaryWriter@,System.Int32@)">
+            <summary>
+            Calls <see cref="M:Haply.HardwareAPI.Runtime.IMessageWriter.Write(System.IO.BinaryWriter@)"/> and returns the number of bytes written to <see cref="P:System.IO.BinaryWriter.BaseStream"/>.
+            </summary>
+            <param name="messageWriter">Message writer.</param>
+            <param name="writer">Binary writer to write with.</param>
+            <param name="length">Number of bytes written.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.MessageWriterExtensions.Write``1(Haply.HardwareAPI.Runtime.IMessageWriter{``0},System.IO.BinaryWriter@,``0@,System.Int32@)">
+            <summary>
+            Calls <see cref="M:Haply.HardwareAPI.Runtime.IMessageWriter`1.Write(System.IO.BinaryWriter@,`0@)"/> and returns the number of bytes written to <see cref="P:System.IO.BinaryWriter.BaseStream"/>.
+            </summary>
+            <typeparam name="T">The type of message data payload to write.</typeparam>
+            <param name="messageWriter">Message writer.</param>
+            <param name="writer">Binary writer to write with.</param>
+            <param name="data">Message data to write.</param>
+            <param name="length">Number of bytes written.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Runtime.ProtocolDefinedConnection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Haply.HardwareAPI.Runtime.ProtocolDefinedConnection.onLoadProtocol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Runtime.ProtocolDefinedConnection.protocol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.ProtocolDefinedConnection.#ctor(System.IO.Stream,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="bufferLength"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Runtime.ProtocolDefinedConnection.LoadProtocolDefinition(Haply.HardwareAPI.Protocol.ProtocolDefinition)">
+            <summary>
+            
+            </summary>
+            <param name="protocol"></param>
+        </member>
+    </members>
+</doc>

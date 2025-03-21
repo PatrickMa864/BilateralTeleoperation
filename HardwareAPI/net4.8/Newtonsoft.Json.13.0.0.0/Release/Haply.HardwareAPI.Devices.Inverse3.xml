@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Haply.HardwareAPI.Devices.Inverse3</name>
+    </assembly>
+    <members>
+        <member name="T:Haply.HardwareAPI.Devices.Inverse3">
+            <summary>
+            Convenience class composed of <see cref="T:Haply.HardwareAPI.Devices.Inverse3Connection"/> and <see cref="T:Haply.HardwareAPI.Devices.Inverse3Kinematics"/> instances.
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Devices.Inverse3.kinematics">
+            <summary>
+            The device kinematics instance.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3.#ctor(Haply.HardwareAPI.Runtime.Generated.ControllerConnection,Haply.HardwareAPI.Devices.Inverse3Kinematics)">
+            <summary>
+            Initializes this convenience class using the provided <see cref="T:Haply.HardwareAPI.Devices.Inverse3Connection"/> and <see cref="T:Haply.HardwareAPI.Devices.Inverse3Kinematics"/> instances.
+            </summary>
+            <param name="connection">The device connection instance. Accessible via the readonly <see cref="!:connection"/> property.</param>
+            <param name="kinematics">The device kinematics instance. Accessible via the readonly <see cref="P:Haply.HardwareAPI.Devices.Inverse3.kinematics"/> property.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3.#ctor(System.IO.Stream,System.Int32,Haply.HardwareAPI.Devices.Inverse3Parameters)">
+            <summary>
+            Calls <see cref="M:Haply.HardwareAPI.Devices.Inverse3.#ctor(Haply.HardwareAPI.Runtime.Generated.ControllerConnection,Haply.HardwareAPI.Devices.Inverse3Kinematics)"/> using <see cref="T:Haply.HardwareAPI.Runtime.Generated.ControllerConnection"/> and <see cref="T:Haply.HardwareAPI.Devices.Inverse3Kinematics"/> instances initialized using the provided <see cref="T:System.IO.Stream"/> and <see cref="T:Haply.HardwareAPI.Devices.Inverse3Parameters"/> parameters.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to initialize the device connection with.</param>
+            <param name="bufferLength">The size of the data byte buffers used to send/receive messages (excluding the header byte).</param>
+            <param name="parameters">The <see cref="T:Haply.HardwareAPI.Devices.Inverse3Parameters"/> to initialize the device kinematics with.</param>
+        </member>
+        <member name="T:Haply.HardwareAPI.Devices.Inverse3Connection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Connection.#ctor(System.IO.Stream,System.Int32,Haply.HardwareAPI.Protocol.ControllerParameters)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="bufferLength"></param>
+            <param name="protocolParameters"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Connection.#ctor(System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Connection.DeviceWakeup">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Connection.JointTorques(Haply.HardwareAPI.Runtime.Generated.JointTorquesRequest)">
+            <summary>
+            
+            </summary>
+            <param name="requestData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Connection.JointAngles(Haply.HardwareAPI.Runtime.Generated.JointAnglesRequest)">
+            <summary>
+            
+            </summary>
+            <param name="requestData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Connection.EndEffectorForce(Haply.HardwareAPI.Runtime.Generated.EndEffectorForceRequest)">
+            <summary>
+            
+            </summary>
+            <param name="requestData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Connection.EndEffectorPosition(Haply.HardwareAPI.Runtime.Generated.EndEffectorPositionRequest)">
+            <summary>
+            
+            </summary>
+            <param name="requestData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Connection.DeviceOrientation">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Connection.DevicePower">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Connection.DeviceTemperature">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Connection.MotorCurrents">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Devices.Inverse3Kinematics">
+            <summary>
+            Calculates forward/inverse kinematics.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.DefaultHardwareParameters">
+            <summary>
+            For development use only. To be deprecated before final release.
+            </summary>
+            <returns>The <see cref="T:Haply.HardwareAPI.Devices.Inverse3Parameters"/> for the </returns>
+        </member>
+        <member name="P:Haply.HardwareAPI.Devices.Inverse3Kinematics.p">
+            <summary>
+            Shorthand for parameters.pantograph.
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Devices.Inverse3Kinematics.f0">
+            <summary>
+            Shorthand for parameters.frame2.
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Devices.Inverse3Kinematics.f1">
+            <summary>
+            Shorthand for parameters.frame1.
+            </summary>
+        </member>
+        <member name="P:Haply.HardwareAPI.Devices.Inverse3Kinematics.fP">
+            <summary>
+            Shorthand for parameters.frameP.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.#ctor(Haply.HardwareAPI.Devices.Inverse3Parameters@)">
+            <summary>
+            Create a new instance using the specified <paramref name="parameters"/>.
+            </summary>
+            <param name="parameters"><see cref="T:Haply.HardwareAPI.Devices.Inverse3Parameters"/> to use.</param>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.#ctor">
+            <summary>
+            Create a new instance using the value returned by <see cref="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.DefaultHardwareParameters"/>.
+            For development use only. To be deprecated before final release.
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.ForwardKinematics(System.Single[]@)">
+            <summary>
+            Convert joint angles to a linear position in 3-dimensional
+            space according to the following axis convention:
+            <br></br>Positive X: Right,
+            <br></br>Positive Y: Forward,
+            <br></br>Positive Z: Up
+            </summary>
+            <param name="angles">Joint angles, in degrees.</param>
+            <returns>End-effector position, in meters.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.InverseKinematics(System.ValueTuple{System.Single,System.Single,System.Single}@,System.Single[]@)">
+            <summary>
+            Convert a linear position in 3-dimensional space
+            to joint angles, according to the following axis convention:
+            <br></br> Positive X: Right,
+            <br></br> Positive Y: Forward,
+            <br></br> Positive Z: Up
+            </summary>
+            <param name="vector">Position, in meters.</param>
+            <param name="angles">Joint angles, in degrees.</param>
+            <returns>True, if the calculation succeeds. </returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.JacobianCalculation(System.Single[]@)">
+            <summary>
+            Calculate a Jacobian matrix based on a set of joint angles.
+            </summary>
+            <param name="angles">Joint angle values, in degrees.</param>
+            <returns>A Jacobian matrix.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.VelocityCalculation(Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@,System.Single[]@)">
+            <summary>
+            Use a Jacobian matrix to calculate the linear velocity corresponding to a set of angular velocities.
+            </summary>
+            <param name="jacobian">The Jacobian matrix.</param>
+            <param name="angularVelocities">Angular velocity values, in degrees per second.</param>
+            <returns>A linear velocity, in meters per second.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.VelocityCalculation(System.Single[]@,System.Single[]@)">
+            <summary>
+            Calculate the linear velocity corresponding to a set of angular velocities. Performs an intermediary Jacobian calculation internally.
+            </summary>
+            <param name="angles">Joint angle values, in degrees.</param>
+            <param name="angularVelocities">Angular velocity values, in degrees per second.</param>
+            <returns>A linear velocity, in meters per second.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.VelocityCalculation(System.Single[]@,Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@,System.Single[]@)">
+            <summary>
+            Calculate the linear velocity corresponding to a set of angular velocities. Performs an intermediary Jacobian calculation internally.
+            </summary>
+            <param name="angles">Joint angle values, in degrees.</param>
+            <param name="jacobian">The Jacobian calculated in the inermediary step.</param>
+            <param name="angularVelocities">Angular velocity values, in degrees per second.</param>
+            <returns>A linear velocity, in meters per second.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.TorqueCalculation(Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@,System.ValueTuple{System.Single,System.Single,System.Single}@,System.Single[]@)">
+            <summary>
+            Use a Jacobian matrix to calculate the set motor torques corresponding to a linear force.
+            </summary>
+            <param name="jacobian">The Jacobian matrix.</param>
+            <param name="force">The input force.</param>
+            <param name="torques">The output torques.</param>
+            <returns>True, if the calculation was successful.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.TorqueCalculation(System.Single[]@,System.ValueTuple{System.Single,System.Single,System.Single}@,System.Single[]@)">
+            <summary>
+            Use a Jacobian matrix to calculate the set motor torques corresponding to a linear force. Performs an intermediary Jacobian calculation internally.
+            </summary>
+            <param name="angles">Joint angle values, in degrees.</param>
+            <param name="force">The input force.</param>
+            <param name="torques">The output torques.</param>
+            <returns>True, if the calculation was successful.</returns>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3Kinematics.TorqueCalculation(System.Single[]@,Haply.HardwareAPI.Kinematics.Matrix3x3{System.Double}@,System.ValueTuple{System.Single,System.Single,System.Single}@,System.Single[]@)">
+            <summary>
+            Calculate the set motor torques corresponding to a linear force. Performs an intermediary Jacobian calculation internally.
+            </summary>
+            <param name="angles">Joint angle values, in degrees.</param>
+            <param name="jacobian">The Jacobian calculated in the inermediary step.</param>
+            <param name="force">The input force.</param>
+            <param name="torques">The output torques.</param>
+            <returns>True, if the calculation was successful.</returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Devices.Inverse3Parameters">
+            <summary>
+            Fixed hardware parameters for a particular controller version.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Devices.Inverse3Parameters.pantograph">
+            <summary>
+            Reduced Denavit-Hartenberg parameters for the pantograph frames.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Devices.Inverse3Parameters.frame0">
+            <summary>
+            Denavit-Hartenberg parameters for frame 0.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Devices.Inverse3Parameters.frame1">
+            <summary>
+            Denavit-Hartenberg parameters for frame 1.
+            </summary>
+        </member>
+        <member name="F:Haply.HardwareAPI.Devices.Inverse3Parameters.frameP">
+            <summary>
+            Denavit-Hartenberg parameters for the pantograph frame.
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Devices.IInverse3ParametersReader">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Devices.IInverse3ParametersWriter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Haply.HardwareAPI.Devices.Inverse3ParametersJsonReader">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3ParametersJsonReader.Read(System.IO.Stream@)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Haply.HardwareAPI.Devices.Inverse3ParametersJsonWriter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Haply.HardwareAPI.Devices.Inverse3ParametersJsonWriter.Write(Haply.HardwareAPI.Devices.Inverse3Parameters@,System.IO.Stream@)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <param name="stream"></param>
+        </member>
+    </members>
+</doc>
